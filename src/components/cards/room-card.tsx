@@ -19,7 +19,7 @@ const RoomCard = ({ img, title, content }: RoomCardType) => (
     />
 
     <div className="flex flex-col gap-5">
-      <h4 className="font-playfair text-2xl">{title}</h4>
+      <h5 className="font-playfair text-2xl">{title}</h5>
       <p className="font-cormorant text-xl max-w-[280px]">{content}</p>
 
       <Link href={""} className="text-base">

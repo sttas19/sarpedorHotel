@@ -28,6 +28,7 @@ const ImageGallery = ({
           } ${index % 2 === 0 ? "mt-10 max-md:mt-0" : "mt-0"} `}
         >
           <Image
+            onClick={() => toggleExpand(image.id)}
             src={image.src}
             alt={`Image ${image.id}`}
             className={`object-cover transition-all duration-300 ${

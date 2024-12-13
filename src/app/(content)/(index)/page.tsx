@@ -18,8 +18,8 @@ import { Link } from "@/components/ui/links";
 
 const HomePage: Page = () => (
   <>
-    <Carousel opts={{ align: "start" }} className="container pt-8">
-      <CarouselContent>
+    <Carousel opts={{ align: "start" }} className="pt-8 relative">
+      <CarouselContent className="">
         {[
           {
             id: "hotel_1",
@@ -35,38 +35,41 @@ const HomePage: Page = () => (
           },
         ].map((card) => (
           <CarouselItem key={card.id}>
-            <article className="relative w-full">
+            <article className=" w-full">
               <Image
                 src={card.img}
                 alt="Hotel"
                 width={1228}
                 height={600}
-                className="w-full h-[600px] object-cover max-md:w-[400px]"
+                className="aspect-[2/1] w-screen max-md:aspect-[1/2]  object-cover "
               />
-              <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-y-5 text-center text-white w-full justify-center items-center">
-                <h4 className="font-playfairdisplay text-2xl max-md:text-xl">
-                  Бодрум
-                </h4>
-                <h1 className="font-playfair text-[64px] leading-[64px] max-md:text-[40px] max-md:leading-[40px] max-md:max-w-[324px] uppercase">
-                  Sarpedor Boutique <br /> Beach Hotel
-                </h1>
-                <p className="font-cormorant text-xl w-[700px] max-md:hidden">
-                  Расположенный в великолепной бухте Торба на идиллическом
-                  склоне холма, этот бутик-отель в Бодруме украшен пленительными
-                  ароматными бугенвиллиями, соснами и оливковыми деревьями.
-                </p>
-                <Button
-                  variant="light"
-                  className="font-manrope self-center mt-10"
-                >
-                  Бронировать
-                </Button>
-              </div>
             </article>
           </CarouselItem>
         ))}
       </CarouselContent>
+      <section className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-y-5 text-center text-white w-full justify-center items-center">
+        <h4>Бодрум</h4>
+        <h1 className="font-playfair text-[64px] leading-[64px] max-md:text-[40px] max-md:leading-[40px]   uppercase">
+          Sarpedor Boutique <br /> Beach Hotel
+        </h1>
+        <p className="font-cormorant text-xl w-[700px] tracking-wider max-md:hidden">
+          Расположенный в великолепной бухте Торба на идиллическом склоне холма,
+          этот бутик-отель в Бодруме украшен пленительными ароматными
+          бугенвиллиями, соснами и оливковыми деревьями.
+        </p>
+        <Button
+          variant="light"
+          className="font-manrope self-center mt-14 max-md:hidden"
+        >
+          Бронировать
+        </Button>
+      </section>
 
+      <div className="absolute bottom-10 px-3 w-full md:hidden">
+        <Button variant="light" className="font-manrope self-center w-full">
+          Бронировать
+        </Button>
+      </div>
       <CarouselNext className="max-md:hidden" />
       <CarouselPrevious className="max-md:hidden" />
     </Carousel>
@@ -74,12 +77,10 @@ const HomePage: Page = () => (
     <Spacer y="4xl" />
 
     <section id="about" className="container ">
-      <div className="flex flex-col items-start gap-10 md:flex-row md:gap-20 ">
+      <div className="flex flex-col items-start gap-10 md:flex-row md:gap-20 text-foreground">
         <div className="md:flex-1 text-left">
-          <h4 className="font-playfairdisplay text-xl md:text-2xl">
-            Дорогие гости!
-          </h4>
-          <h2 className="font-playfair md:text-[48px] uppercase mt-2 text-3xl">
+          <h4>Дорогие гости!</h4>
+          <h2 className="font-playfair md:text-[48px] uppercase mt-2 text-3xl leading-[48px]">
             Добро пожаловать
           </h2>
           <p className="font-cormorant text-xl leading-[26px] mt-5">
@@ -118,10 +119,8 @@ const HomePage: Page = () => (
       <div className="flex flex-col gap-10">
         <div className="flex max-md:flex-col items-start justify-between max-md:gap-5 ">
           <div className="flex flex-col flex-1 text-left">
-            <h4 className="font-playfairdisplay text-xl md:text-2xl">
-              Максимальный комфорт
-            </h4>
-            <h2 className="font-playfair md:text-[48px] uppercase mt-2 text-3xl">
+            <h4>Максимальный комфорт</h4>
+            <h2 className="font-playfair md:text-[48px] uppercase mt-2 text-3xl leading-[48px]">
               Наши комнаты
             </h2>
           </div>
@@ -215,10 +214,8 @@ const HomePage: Page = () => (
       <div className="flex flex-col gap-10">
         <div className="flex items-start max-md:flex-col justify-between">
           <div className="flex flex-col flex-1 text-left">
-            <h4 className="font-playfairdisplay text-xl md:text-2xl">
-              Для гурманов
-            </h4>
-            <h2 className="font-playfair md:text-[48px] uppercase mt-2 text-3xl">
+            <h4>Для гурманов</h4>
+            <h2 className="font-playfair md:text-[48px] uppercase mt-2 text-3xl leading-[48px]">
               Рестораны и бары
             </h2>
           </div>
@@ -317,7 +314,7 @@ const HomePage: Page = () => (
     <section className="container">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-6 text-center">
-          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl">
+          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl leading-[48px]">
             Спа
           </h2>
           <p className="font-cormorant text-xl leading-[26px] max-w-[830px] self-center max-md:text-left">
@@ -331,10 +328,8 @@ const HomePage: Page = () => (
         </div>
         <div className="flex max-md:flex-col-reverse justify-between gap-5">
           <div className="flex flex-col flex-1">
-            <h4 className="font-playfairdisplay text-2xl max-md:text-xl">
-              Что вас ждет:
-            </h4>
-            <ul className="font-manrope text-base space-y-4 list-image-[url(/ListStyleImages/_1.png)] mt-8 list-inside">
+            <h4>Что вас ждет:</h4>
+            <ul className="font-manrope text-base space-y-6 list-image-[url(/ListStyleImages/_1.png)] mt-8 ml-5 [&>*]:pl-3">
               <li>Традиционные турецкие хаммамы</li>
               <li>Расслабляющие и лечебные массажи</li>
               <li>Индивидуальные программы ухода за лицом и телом</li>
@@ -366,10 +361,8 @@ const HomePage: Page = () => (
       <div className="flex flex-col gap-10">
         <div className="flex items-start justify-between max-md:flex-col ">
           <div className="flex flex-col flex-1 text-left">
-            <h4 className="font-playfairdisplay text-xl md:text-2xl">
-              Эгейское побережье
-            </h4>
-            <h2 className="font-playfair text-[48px] uppercase mt-2 max-md:text-3xl">
+            <h4>Эгейское побережье</h4>
+            <h2 className="font-playfair text-[48px] uppercase mt-2 max-md:text-3xl leading-[48px]">
               Расположение
             </h2>
           </div>
@@ -397,7 +390,7 @@ const HomePage: Page = () => (
       <div className="py-12 bg-white">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-6 text-center">
-            <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl">
+            <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl leading-[48px]">
               Специальное предложение
             </h2>
             <p className="font-cormorant text-xl leading-[26px] max-w-[960px] self-center">
@@ -411,7 +404,7 @@ const HomePage: Page = () => (
             </p>
           </div>
           <Button className="self-center font-manrope">
-            Получить промо код
+            Получить промокод
           </Button>
         </div>
       </div>
@@ -422,7 +415,7 @@ const HomePage: Page = () => (
     <section className="container">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-6 text-center">
-          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl">
+          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl leading-[48px]">
             Свадьбы
           </h2>
           <p className="font-cormorant text-xl leading-[26px] max-w-[830px] self-center max-md:text-left">
@@ -444,8 +437,8 @@ const HomePage: Page = () => (
             className=" w-[552px] object-cover"
           />
           <div className="flex flex-col flex-1">
-            <h4 className="font-playfairdisplay text-2xl">Что вас ждет:</h4>
-            <ul className="font-manrope text-base space-y-4 list-image-[url(/ListStyleImages/_1.png)] mt-8 list-inside">
+            <h4>Что вас ждет:</h4>
+            <ul className="font-manrope text-base space-y-6 list-image-[url(/ListStyleImages/_1.png)] mt-4 ml-5 [&>*]:pl-3">
               <li>Специальное свадебное меню</li>
               <li>Специальный свадебный торт от нашего шеф-повара</li>
               <li>Коктейль на закате у бассейна перед свадебной церемонией</li>
@@ -467,7 +460,7 @@ const HomePage: Page = () => (
     <section className=" container">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-6 text-center">
-          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl">
+          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl leading-[48px]">
             Всё включено
           </h2>
           <p className="font-cormorant text-xl leading-[26px] max-w-[830px] self-center max-md:text-left">
@@ -498,7 +491,7 @@ const HomePage: Page = () => (
     <section id="contacts" className="container pb-36">
       <div className="p-12 max-md:p-4 bg-white flex flex-col gap-8">
         <div className="bg-[#282828] flex flex-col gap-6 text-center text-white p-10">
-          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl">
+          <h2 className="font-playfair text-[48px] uppercase mt-2 self-center max-md:text-3xl leading-[48px]">
             Свяжитесь с нами
           </h2>
           <p className="font-cormorant text-xl leading-[26px] max-w-[830px] self-center">

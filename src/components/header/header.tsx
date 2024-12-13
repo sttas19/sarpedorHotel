@@ -4,6 +4,7 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
 import { XIcon } from "../ui/icons/x-icon";
@@ -15,9 +16,9 @@ const Header = () => (
         <Image
           src="/logo/logo.png"
           alt="logo"
-          width={300}
-          height={200}
-          className="aspect-[3/1] h-14  w-auto object-contain"
+          width={96}
+          height={80}
+          className="aspect-[3/1] h-16 w-24 object-contain"
         />
       </div>
 
@@ -48,6 +49,7 @@ const Header = () => (
               <MenuIcon className="w-10 h-10" />
             </DialogTrigger>
             <DialogContent className="bg-[#2D2D2D] p-6 ">
+              <DialogTitle></DialogTitle>
               <DialogClose>
                 <XIcon
                   className="h-7 w-7 absolute top-5 right-5 "
